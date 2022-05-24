@@ -1,0 +1,215 @@
+
+
+% Bibstyle aea-mod.bst version 2018.10.02
+
+\begin{thebibliography}{xx}
+
+\harvarditem[{AEA Data Editor}]{{AEA Data Editor}}{2021{\em
+  a}}{aeadataeditor2021b}
+{\bf {AEA Data Editor}.} 2021{\em a}. ``{{AEADataEditor}}/Docker-Aer-2018-0733:
+  Docker Image.'' {\em AEA Data Editor Github repository}.
+  \url{https://github.com/AEADataEditor/docker-aer-2018-0733} (accessed
+  2022-01-03).
+
+\harvarditem[{AEA Data Editor}]{{AEA Data Editor}}{2021{\em
+  b}}{aeadataeditor2021a}
+{\bf {AEA Data Editor}.} 2021{\em b}. ``{{AEADataEditor}}/{{JEP}}-2021-1239:
+  Docker Image.'' {\em AEA Data Editor Github repository}.
+  \url{https://github.com/AEADataEditor/JEP-2021-1239} (accessed 2022-01-03).
+
+\harvarditem[{AEA Data Editor}]{{AEA Data Editor}}{2021{\em
+  c}}{aeadataeditor2021}
+{\bf {AEA Data Editor}.} 2021{\em c}. ``Use of {{Docker}} for
+  {{Reproducibility}} in {{Economics}}.''
+  \url{https://aeadataeditor.github.io/posts/2021-11-16-docker} (accessed
+  2022-01-03).
+
+\harvarditem[Altman \harvardand\ Crosas]{Micah Altman \harvardand\ Merc{\`e}
+  Crosas}{2013}{Altman2013-fl}
+{\bf Altman, Micah, and Merc{\`e} Crosas.} 2013. ``The Evolution of Data
+  Citation: From Principles to Implementation.'' {\em IASSIST Quarterly},
+  62--70.
+
+\harvarditem[{American Economic Association}]{{American Economic
+  Association}}{2020}{10.1257/pandp.110.dcap}
+{\bf {American Economic Association}.} 2020. ``Data and Code Availability
+  Policy.'' {\em AEA Papers and Proceedings}, 110:~776--78.
+  \url{https://doi.org/10.1257/pandp.110.776}.
+
+\harvarditem[Assunção, Gandour \harvardand\ Rocha]{Juliano Assunção,
+  Clarissa Gandour \harvardand\ Romero Rocha}{2021}{assuncao2021capsule}
+{\bf Assunção, Juliano, Clarissa Gandour, and Romero Rocha.} 2021.
+  ``Replication Capsule for: {DETERring} Deforestation in the {Amazon}:
+  {Environmental} Monitoring and Law Enforcement [Source Code].'' CodeOcean,
+  \url{https://doi.org/10.24433/CO.5098352.v1}.
+
+\harvarditem[Brunnermeier et~al.]{Markus Brunnermeier, Darius Palia, Karthik~A.
+  Sastry \harvardand\ Christopher~A. Sims}{2021}{brunnermeier2021}
+{\bf Brunnermeier, Markus, Darius Palia, Karthik~A. Sastry, and Christopher~A.
+  Sims.} 2021. ``Feedbacks: Financial {{Markets}} and {{Economic Activity}}.''
+  {\em American Economic Review}, 111(6):~1845--1879.
+  \url{https://doi.org/10.1257/aer.20180733}.
+
+\harvarditem[Chard et~al.]{Kyle Chard, Niall Gaffney, Mihael Hategan, Kacper
+  Kowalik, Bertram Ludaescher, Timothy McPhillips, Jarek Nabrzyski, Victoria
+  Stodden, Ian Taylor, Thomas Thelen, Matthew~J. Turk \harvardand\ Craig
+  Willis}{2020}{chard2020a}
+{\bf Chard, Kyle, Niall Gaffney, Mihael Hategan, Kacper Kowalik, Bertram
+  Ludaescher, Timothy McPhillips, Jarek Nabrzyski, Victoria Stodden, Ian
+  Taylor, Thomas Thelen, Matthew~J. Turk, and Craig Willis.} 2020. ``Toward
+  {{Enabling Reproducibility}} for {{Data}}-{{Intensive Research}} Using the
+  {{Whole Tale Platform}}.'' {\em arXiv:2005.06087 [cs]}.
+  \url{https://doi.org/10.3233/APC200107}.
+
+\harvarditem[{Clyburne-Sherin}, Fei \harvardand\ Green]{April
+  {Clyburne-Sherin}, Xu Fei \harvardand\ Seth~Ariel
+  Green}{2019}{clyburne-sherin2019}
+{\bf {Clyburne-Sherin}, April, Xu Fei, and Seth~Ariel Green.} 2019.
+  ``Computational {{Reproducibility}} via {{Containers}} in {{Psychology}}.''
+  {\em Meta-Psychology}, 3. \url{https://doi.org/10.15626/MP.2018.892}.
+
+\harvarditem[{Creative Commons}]{{Creative Commons}}{2017}{CreativeCommons2017}
+{\bf {Creative Commons}.} 2017. ``About {{The Licenses}}.''
+  \url{https://web.archive.org/web/20181208161819/https://creativecommons.org/licenses/}
+  (accessed 2018-12-08).
+
+\harvarditem[{Data Citation Synthesis Group}]{{Data Citation Synthesis
+  Group}}{2014}{jddcp}
+{\bf {Data Citation Synthesis Group}.} 2014. ``Joint Declaration of Data
+  Citation Principles.'' , ed. Maryann Martone. Force11.
+  \url{https://doi.org/10.25490/A97F-EGYK}.
+
+\harvarditem[DellaVigna \harvardand\ Pope]{Stefano DellaVigna \harvardand\
+  Devin Pope}{2021{\em a}}{dellavigna2021capsule}
+{\bf DellaVigna, Stefano, and Devin Pope.} 2021{\em a}. ``Compute Capsule for:
+  {Stability} of Experimental Results: {Forecasts} and Evidence [Source
+  Code].'' CodeOcean, \url{https://doi.org/10.24433/CO.0687784.v1}.
+
+\harvarditem[DellaVigna \harvardand\ Pope]{Stefano DellaVigna \harvardand\
+  Devin Pope}{2021{\em b}}{dellavigna2021data}
+{\bf DellaVigna, Stefano, and Devin Pope.} 2021{\em b}. ``Data and Code for:
+  {Stability} of Experimental Results: {Forecasts} and Evidence.'' American
+  Economic Association [publisher], Inter-university Consortium for Political
+  and Social Research [distributor], \url{https://doi.org/10.3886/E135221V1}.
+
+\harvarditem[Deryugina, Shurchkov \harvardand\ Stearns]{Tatyana Deryugina, Olga
+  Shurchkov \harvardand\ Jenna Stearns}{2021{\em a}}{deryugina2021}
+{\bf Deryugina, Tatyana, Olga Shurchkov, and Jenna Stearns.} 2021{\em a}.
+  ``{{COVID}}-19 {{Disruptions Disproportionately Affect Female Academics}}.''
+  {\em AEA Papers and Proceedings}, 111:~164--168.
+  \url{https://doi.org/10.1257/pandp.20211017}.
+
+\harvarditem[Deryugina, Shurchkov \harvardand\ Stearns]{Tatyana Deryugina, Olga
+  Shurchkov \harvardand\ Jenna Stearns}{2021{\em b}}{deryugina2021data}
+{\bf Deryugina, Tatyana, Olga Shurchkov, and Jenna Stearns.} 2021{\em b}.
+  ``Data for: {COVID}-19 Disruptions Disproportionately Affect Female
+  Academics.'' American Economic Association [publisher] Inter-university
+  Consortium for Political and Social Research [distributor],
+  \url{https://doi.org/10.3886/E139263V1}.
+
+\harvarditem[Dinkelman \harvardand\ Ngai]{Taryn Dinkelman \harvardand\
+  L.~Rachel Ngai}{2022}{dinkelman2022data}
+{\bf Dinkelman, Taryn, and L.~Rachel Ngai.} 2022. ``Data and Code for: {Time}
+  Use and Gender in {Africa} in Times of Structural Transformation.'' American
+  Economic Association [publisher], Inter-university Consortium for Political
+  and Social Research [distributor], \url{https://doi.org/10.3886/E145161V2}.
+
+\harvarditem[Duflo \harvardand\ Hoynes]{Esther Duflo \harvardand\ Hilary
+  Hoynes}{2018}{10.1257/pandp.108.745}
+{\bf Duflo, Esther, and Hilary Hoynes.} 2018. ``Report of the Search Committee
+  to Appoint a Data Editor for the AEA.'' {\em AEA Papers and Proceedings},
+  108:~745. \url{https://doi.org/10.1257/pandp.108.745}.
+
+\harvarditem[Fohlin \harvardand\ Lu]{Caroline Fohlin \harvardand\ Zhikun
+  Lu}{2021}{caroline_fohlin_2021_5151203}
+{\bf Fohlin, Caroline, and Zhikun Lu.} 2021. ``{Code for "How Contagious was
+  the Panic of 1907? New Evidence from Trust Company Stocks"}.'' Zenodo,
+  \url{https://doi.org/10.5281/zenodo.5151203}.
+
+\harvarditem[Gendron-Carrier et~al.]{Nicolas Gendron-Carrier, Marco
+  Gonzalez-Navarro, Stefano Polloni \harvardand\ Matthew~A.
+  Turner}{2020}{gendron_carrier_nicolas_2020_4317553}
+{\bf Gendron-Carrier, Nicolas, Marco Gonzalez-Navarro, Stefano Polloni, and
+  Matthew~A. Turner.} 2020. ``{Global daily Aerosol Optical Depth measurements
+  from Moderate Resolution Imaging Spectroradiometer (MODIS) on NASA's Aqua and
+  Terra satellites}.'' Zenodo, \url{https://doi.org/10.5281/zenodo.4317553}.
+
+\harvarditem[Goncalves \harvardand\ Mello]{Felipe Goncalves \harvardand\ Steven
+  Mello}{2021{\em a}}{goncalves2021}
+{\bf Goncalves, Felipe, and Steven Mello.} 2021{\em a}. ``A {{Few Bad Apples}}?
+  Racial {{Bias}} in {{Policing}}.'' {\em American Economic Review},
+  111(5):~1406--1441. \url{https://doi.org/10.1257/aer.20181607}.
+
+\harvarditem[Goncalves \harvardand\ Mello]{Felipe Goncalves \harvardand\ Steven
+  Mello}{2021{\em b}}{goncalves2021data}
+{\bf Goncalves, Felipe, and Steven Mello.} 2021{\em b}. ``Supplementary Data
+  for: {A} Few Bad Apples? {Racial} Bias in Policing.'' American Economic
+  Association [publisher] Inter-university Consortium for Political and Social
+  Research [distributor], \url{https://doi.org/10.3886/E123921V1}.
+
+\harvarditem[{National Center for Chronic Disease Prevention and Health
+  Promotion}]{{National Center for Chronic Disease Prevention and Health
+  Promotion}}{2021{\em a}}{BRFSS2021a}
+{\bf {National Center for Chronic Disease Prevention and Health Promotion}.}
+  2021{\em a}. ``{Behavioral Risk Factor Surveillance System} ({BRFSS}) Annual
+  Survey Data, 1999-2015.'' Centers for Disease Control and Prevention
+  [publisher] Inter-university Consortium for Political and Social Research
+  [distributor], \url{https://doi.org/10.3886/E146342V1}.
+
+\harvarditem[{National Center for Chronic Disease Prevention and Health
+  Promotion}]{{National Center for Chronic Disease Prevention and Health
+  Promotion}}{2021{\em b}}{BRFSS2021b}
+{\bf {National Center for Chronic Disease Prevention and Health Promotion}.}
+  2021{\em b}. ``{Behavioral Risk Factor Surveillance System} ({BRFSS}) Annual
+  Survey Data, 1999-2019.'' Centers for Disease Control and Prevention
+  [publisher] Inter-university Consortium for Political and Social Research
+  [distributor], \url{https://doi.org/10.3886/E146342V2}.
+
+\harvarditem[{National Center for Chronic Disease Prevention and Health
+  Promotion}]{{National Center for Chronic Disease Prevention and Health
+  Promotion}}{2021{\em c}}{SMARTBRFSS2021}
+{\bf {National Center for Chronic Disease Prevention and Health Promotion}.}
+  2021{\em c}. ``{SMART}: {BRFSS City and County Data} (2002-2015).'' Centers
+  for Disease Control and Prevention [publisher] Inter-university Consortium
+  for Political and Social Research [distributor],
+  \url{https://doi.org/10.3886/E146343V1}.
+
+\harvarditem[{NIH National Cancer Institute}]{{NIH National Cancer
+  Institute}}{2021}{SEER2021}
+{\bf {NIH National Cancer Institute}.} 2021. ``{NIH} {SEER} {U.S.} Population
+  Data - 1969-2019.'' National Institutes of Health [publisher]
+  Inter-university Consortium for Political and Social Research [distributor],
+  \url{https://doi.org/10.3886/E146341V1}.
+
+\harvarditem[Rossi]{Barbara Rossi}{2021{\em a}}{rossi2021capsule}
+{\bf Rossi, Barbara.} 2021{\em a}. ``Compute Capsule for: {Forecasting} in the
+  presence of instabilities: How do we know whether models predict [Source
+  Code].'' CodeOcean, \url{https://doi.org/10.24433/CO.7940775.v1}.
+
+\harvarditem[Rossi]{Barbara Rossi}{2021{\em b}}{rossi2021data}
+{\bf Rossi, Barbara.} 2021{\em b}. ``Data and Code for: {Forecasting} in the
+  Presence of Instabilities.'' American Economic Association [publisher],
+  Inter-university Consortium for Political and Social Research [distributor],
+  \url{https://doi.org/10.3886/E147225V1}.
+
+\harvarditem[Vilhuber]{Lars Vilhuber}{2019}{10.1257/pandp.109.718}
+{\bf Vilhuber, Lars.} 2019. ``Report by the AEA Data Editor.'' {\em AEA Papers
+  and Proceedings}, 109:~718--29. \url{https://doi.org/10.1257/pandp.109.718}.
+
+\harvarditem[Vilhuber]{Lars Vilhuber}{2022{\em a}}{report2021data}
+{\bf Vilhuber, Lars.} 2022{\em a}. ``Code and Data for: Report for 2021 by the
+  {AEA} {Data} {Editor}.'' American Economic Association [publisher],
+  \url{https://doi.org/TBD}.
+
+\harvarditem[Vilhuber]{Lars Vilhuber}{2022{\em b}}{E117876V3}
+{\bf Vilhuber, Lars.} 2022{\em b}. ``Process data for the {AEA} Pre-publication
+  Verification Service.'' American Economic Association [publisher] V3,
+  \url{https://doi.org/10.3886/E117876V3}.
+
+\harvarditem[Vilhuber et~al.]{Lars Vilhuber, Marie Connolly, Miklós Koren,
+  Joan Llull \harvardand\ Peter Morrow}{2020}{READMEv1.0.0}
+{\bf Vilhuber, Lars, Marie Connolly, Miklós Koren, Joan Llull, and Peter
+  Morrow.} 2020. ``{A template README for social science replication
+  packages}.'' \url{https://doi.org/10.5281/zenodo.4319999}.
+
+\end{thebibliography}
