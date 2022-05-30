@@ -12,7 +12,6 @@ zip -rp $outfile data/manual/
 zip -rp $outfile data/scholarone/*
 zip -rp $outfile $(find data -name README.\*)
 zip -rp $outfile *.sh 
-zip -rp $outfile *.bib
 zip -rp $outfile *.R
 zip -rp $outfile *.Rproj
 zip -rp $outfile LICENSE.txt
