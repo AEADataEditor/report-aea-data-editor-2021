@@ -1,0 +1,203 @@
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> # Download lab members from public repo
+> # Author: Lars Vilhuber
+> 
+> ## Inputs: export_12-22-2020.csv
+> ## Outputs: file.path(basepath,"data","replicationlab_members.txt")
+> 
+> ### Cleans working environment.
+> source(here::here("global-libraries.R"),echo=TRUE)
+
+> options(repos = c(REPO_NAME = "https://packagemanager.rstudio.com/all/__linux__/focal/2021-12-01+MTo2NjQ1NDU1LDI6NDUyNjIxNTtCRjhCNTA0Mw"))
+
+> pkgTest <- function(x) {
++     if (!require(x, character.only = TRUE)) {
++         install.packages(x, dep = TRUE)
++         if (!require(x, charact .... [TRUNCATED] 
+
+> pkgTest.github <- function(libname, source, pkgname = libname) {
++     if (!require(libname, character.only = TRUE)) {
++         if (pkgname == "")  .... [TRUNCATED] 
+
+> global.libraries <- c("dplyr", "here", "tidyr", "tibble", 
++     "stringr", "readr", "splitstackshape", "digest", "remotes", 
++     "readxl", "ggplo ..." ... [TRUNCATED] 
+
+> results <- sapply(as.list(global.libraries), pkgTest)
+Loading required package: dplyr
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: here
+here() starts at /home/rstudio
+Loading required package: tidyr
+Loading required package: tibble
+Loading required package: stringr
+Loading required package: readr
+Loading required package: splitstackshape
+Loading required package: digest
+Loading required package: remotes
+Loading required package: readxl
+Loading required package: ggplot2
+Loading required package: ggthemes
+
+> pkgTest.github("data.table", "Rdatatable")
+Loading required package: data.table
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+[1] "OK"
+
+> pkgTest.github("stargazer", "markwestcott34", "stargazer-booktabs")
+Loading required package: stargazer
+
+Please cite as: 
+
+ Hlavac, Marek (2015). stargazer: Well-Formatted Regression and Summary Statistics Tables.
+ R package version 5.2. http://CRAN.R-project.org/package=stargazer 
+
+[1] "OK"
+> source(here::here("programs","config.R"),echo=TRUE)
+
+> process_anon <- TRUE
+
+> download_anon <- TRUE
+
+> firstday <- "2020-12-01"
+
+> lastday <- "2021-11-30"
+
+> basepath <- here::here()
+
+> setwd(basepath)
+
+> jiraanon <- file.path(basepath, "data", "jira", "anon")
+
+> manual <- file.path(basepath, "data", "manual")
+
+> icpsrbase <- file.path(basepath, "data", "icpsr")
+
+> jira.anon.name <- file.path(jiraanon, "jira.anon.RDS")
+
+> jira.anon.sha256 <- "73c92a3ff1d4f5ee5cedd2bf05c5940ca900f621c2e9358bf3e3a3149519ae7c"
+
+> jira.anon.sha512 <- "c8d828bc34bb965a57aab0e4446e0b06b7e55329f0600a4bb8e6d2d75908f4c14340a9f7ea6fe4e6eae103ffdb1d019aab313956be52c6971bf3c89633ecc31 ..." ... [TRUNCATED] 
+
+> jira.anon.urlbase <- "https://raw.githubusercontent.com/AEADataEditor/processing-jira-process-data/698c61395a86df31aa064b843c0e08a67bd64358/data/"
+
+> jira.anon.url <- paste0(jira.anon.urlbase, "anon/jira.anon.RDS")
+
+> jira.members.url <- paste0(jira.anon.urlbase, "replicationlab_members.txt")
+
+> jira.members.name <- file.path(jiraanon, "replicationlab_members.txt")
+
+> noncompliance.name <- file.path(manual, "noncompliance.xlsx")
+
+> scholarone.name <- file.path(basepath, "data", "scholarone", 
++     "dataEditorReport_20201128-20211127Revised.xlsx")
+
+> scholarone.skip <- 33
+
+> images <- file.path(basepath, "images")
+
+> tables <- file.path(basepath, "tables")
+
+> programs <- file.path(basepath, "programs")
+
+> temp <- file.path(basepath, "data", "temp")
+
+> latexnums.Rda <- file.path(tables, "latexnums.Rda")
+
+> latexnums.tex <- file.path(tables, "latexnums.tex")
+
+> for (dir in list(images, tables, programs, temp)) {
++     if (file.exists(dir)) {
++     }
++     else {
++         dir.create(file.path(dir))
++     }
+ .... [TRUNCATED] 
+
+> set.seed(20201201)
+
+> pkgTest("tibble")
+[1] "OK"
+
+> if (file.exists(latexnums.Rda)) {
++     print(paste0("File for export to LaTeX found: ", latexnums.Rda))
++ } else {
++     latexnums <- tibble(field  .... [TRUNCATED] 
+[1] "File for export to LaTeX found: /home/rstudio/tables/latexnums.Rda"
+
+> update_latexnums <- function(field, value) {
++     latexnums <- readRDS(latexnums.Rda)
++     if (any(latexnums$field == field)) {
++         message( .... [TRUNCATED] 
+> 
+> 
+> # Read in data extracted from Jira, anonymized
+> 
+> if ( file.exists(jira.members.name) ) {
++   message("File exists, proceeding.")
++ } else {
++   message("Attempting to download file")
++   try(download.file(jira.members.url,jira.members.name,mode="wb"))
++   if ( file.exists(jira.members.name) ) {
++     message("Download successful, proceeding.")
++   } else {
++     stop("Download failed. Please investigate")
++   }
++ }
+File exists, proceeding.
+> 
+> # read it in, and filter out some members who are not undergraduates
+> 
+> lab.members <- read_csv(jira.members.name) %>%
++   filter(! name %in% c("Leonel Borja Plaza","Jenna Kutz Farabaugh","Hyuk Son")) %>%
++   arrange(name) %>%
++   # Tricky way to get this to be text when output!
++   mutate(extra=",")
+Rows: 47 Columns: 1
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): name
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+> lab.members$extra[nrow(lab.members)]="."
+> 
+> update_latexnums("teamsize",nrow(lab.members))
+Updating existing field teamsize
+> 
+> write.table(lab.members, 
++             file = file.path(tables,"replicationlab_members.tex"), sep = "",
++             row.names = FALSE,col.names = FALSE,quote = FALSE)
+> 

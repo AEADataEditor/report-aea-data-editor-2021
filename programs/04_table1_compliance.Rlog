@@ -1,0 +1,324 @@
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> # Tabulate statistics and make graphs for the AEA data editor report
+> # Harry Son
+> # 2/18/2021
+> 
+> # Inputs
+> #   - file.path(jiraanon,"jira.anon.RDS") 
+> #   - file.path(temp,"jira.others.RDS)
+> # Outputs
+> 
+> 
+> ### Load libraries 
+> ### Requirements: have library *here*
+> source(here::here("global-libraries.R"),echo=TRUE)
+
+> options(repos = c(REPO_NAME = "https://packagemanager.rstudio.com/all/__linux__/focal/2021-12-01+MTo2NjQ1NDU1LDI6NDUyNjIxNTtCRjhCNTA0Mw"))
+
+> pkgTest <- function(x) {
++     if (!require(x, character.only = TRUE)) {
++         install.packages(x, dep = TRUE)
++         if (!require(x, charact .... [TRUNCATED] 
+
+> pkgTest.github <- function(libname, source, pkgname = libname) {
++     if (!require(libname, character.only = TRUE)) {
++         if (pkgname == "")  .... [TRUNCATED] 
+
+> global.libraries <- c("dplyr", "here", "tidyr", "tibble", 
++     "stringr", "readr", "splitstackshape", "digest", "remotes", 
++     "readxl", "ggplo ..." ... [TRUNCATED] 
+
+> results <- sapply(as.list(global.libraries), pkgTest)
+Loading required package: dplyr
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: here
+here() starts at /home/rstudio
+Loading required package: tidyr
+Loading required package: tibble
+Loading required package: stringr
+Loading required package: readr
+Loading required package: splitstackshape
+Loading required package: digest
+Loading required package: remotes
+Loading required package: readxl
+Loading required package: ggplot2
+Loading required package: ggthemes
+
+> pkgTest.github("data.table", "Rdatatable")
+Loading required package: data.table
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+[1] "OK"
+
+> pkgTest.github("stargazer", "markwestcott34", "stargazer-booktabs")
+Loading required package: stargazer
+
+Please cite as: 
+
+ Hlavac, Marek (2015). stargazer: Well-Formatted Regression and Summary Statistics Tables.
+ R package version 5.2. http://CRAN.R-project.org/package=stargazer 
+
+[1] "OK"
+> source(here::here("programs","config.R"),echo=TRUE)
+
+> process_anon <- TRUE
+
+> download_anon <- TRUE
+
+> firstday <- "2020-12-01"
+
+> lastday <- "2021-11-30"
+
+> basepath <- here::here()
+
+> setwd(basepath)
+
+> jiraanon <- file.path(basepath, "data", "jira", "anon")
+
+> manual <- file.path(basepath, "data", "manual")
+
+> icpsrbase <- file.path(basepath, "data", "icpsr")
+
+> jira.anon.name <- file.path(jiraanon, "jira.anon.RDS")
+
+> jira.anon.sha256 <- "73c92a3ff1d4f5ee5cedd2bf05c5940ca900f621c2e9358bf3e3a3149519ae7c"
+
+> jira.anon.sha512 <- "c8d828bc34bb965a57aab0e4446e0b06b7e55329f0600a4bb8e6d2d75908f4c14340a9f7ea6fe4e6eae103ffdb1d019aab313956be52c6971bf3c89633ecc31 ..." ... [TRUNCATED] 
+
+> jira.anon.urlbase <- "https://raw.githubusercontent.com/AEADataEditor/processing-jira-process-data/698c61395a86df31aa064b843c0e08a67bd64358/data/"
+
+> jira.anon.url <- paste0(jira.anon.urlbase, "anon/jira.anon.RDS")
+
+> jira.members.url <- paste0(jira.anon.urlbase, "replicationlab_members.txt")
+
+> jira.members.name <- file.path(jiraanon, "replicationlab_members.txt")
+
+> noncompliance.name <- file.path(manual, "noncompliance.xlsx")
+
+> scholarone.name <- file.path(basepath, "data", "scholarone", 
++     "dataEditorReport_20201128-20211127Revised.xlsx")
+
+> scholarone.skip <- 33
+
+> images <- file.path(basepath, "images")
+
+> tables <- file.path(basepath, "tables")
+
+> programs <- file.path(basepath, "programs")
+
+> temp <- file.path(basepath, "data", "temp")
+
+> latexnums.Rda <- file.path(tables, "latexnums.Rda")
+
+> latexnums.tex <- file.path(tables, "latexnums.tex")
+
+> for (dir in list(images, tables, programs, temp)) {
++     if (file.exists(dir)) {
++     }
++     else {
++         dir.create(file.path(dir))
++     }
+ .... [TRUNCATED] 
+
+> set.seed(20201201)
+
+> pkgTest("tibble")
+[1] "OK"
+
+> if (file.exists(latexnums.Rda)) {
++     print(paste0("File for export to LaTeX found: ", latexnums.Rda))
++ } else {
++     latexnums <- tibble(field  .... [TRUNCATED] 
+[1] "File for export to LaTeX found: /home/rstudio/tables/latexnums.Rda"
+
+> update_latexnums <- function(field, value) {
++     latexnums <- readRDS(latexnums.Rda)
++     if (any(latexnums$field == field)) {
++         message( .... [TRUNCATED] 
+> 
+> 
+> library(stargazer)
+> 
+> # Get an intermediate file
+> jira.others <- readRDS(file.path(temp,"jira.others.RDS"))
+> 
+> # Read in data extracted from Jira, anonymized
+> # 
+> 
+> if ( file.exists(jira.anon.name) ) {
++   message("File exists, proceeding.")
++ } else {
++     stop("Go to previous step to download file")
++ }
+File exists, proceeding.
+> 
+> jira.anon <- readRDS(jira.anon.name) 
+> 
+> #  We capture those where the transition is from "pending publication"  to "done" at some point
+> 
+> # diagnostics
+> table(jira.anon$Status)
+
+                  Alternate          Alternate workflow 
+                          2                         172 
+                   Approved                    Assigned 
+                       4213                        2393 
+                    Blocked                        Code 
+                        346                        3686 
+                Code review                        Data 
+                        354                        1637 
+                       Done                 In Progress 
+                       1584                        3137 
+                 Incomplete                        Open 
+                        511                        8359 
+        Pending Article DOI   Pending openICPSR changes 
+                        335                        1601 
+        Pending publication                Pre-Approved 
+                       2157                         967 
+     Processing publication                      Report 
+                        670                          32 
+        Report Under Review        Submitted PandP form 
+                       4139                         202 
+            Submitted to MC                Under Review 
+                       1595                          32 
+               Verification Waiting for external report 
+                       1347                          91 
+           Waiting for info    Write Preliminary Report 
+                         67                        1689 
+             Writing Report 
+                       2009 
+> 
+> # 
+> jira.publish <-  jira.anon %>%
++   filter(date_created >= firstday, date_created < lastday) %>%
++   cSplit("Changed.Fields",",")  %>%
++   mutate(status_change = ifelse(Changed.Fields_1=="Status","Yes",ifelse(Changed.Fields_2=="Status","Yes",ifelse(Changed.Fields_3=="Status","Yes",ifelse(Changed.Fields_4=="Status","Yes","No"))))) %>%
++   filter(status_change=="Yes"|received=="Yes") %>%
++   mutate(subtask_y=ifelse(is.na(subtask),"No",ifelse(subtask!="","Yes",""))) %>%
++   filter(subtask_y=="No") %>%
++   filter(Journal != "") %>%
++   left_join(jira.others,by="ticket") %>%
++   transform(others=ifelse(is.na(others),"No",as.character(others))) %>%
++   filter(others=="No") %>%
++   transform(pending_pub = ifelse(Status %in% c("Pending publication","Pending Article DOI"),1,0),
++             pending_author = ifelse(Status %in% c("Pending openICPSR changes"),1,0),
++             done = ifelse(Status %in% c("Done","Processing publication"),1,0)) %>%
++   group_by(mc_number_anon) %>%
++   mutate(pending_pub = max(pending_pub), 
++          pending_author = max(pending_author),
++             done = max(done)) %>%
++   select(ticket, mc_number_anon,Journal,pending_pub, pending_author,done) %>%
++   # This filter will capture all those that were *ever* pending_pub and are also "done"
++   filter(pending_pub==1&done==1) %>%
++   distinct(mc_number_anon, .keep_all=TRUE)  %>%
++   ungroup %>%
++   mutate(journal_group = ifelse(Journal=="AEA P&P","Papers and Proceedings","AER and journals")) %>%
++   group_by(journal_group) %>%
++   summarise(Published = n_distinct(mc_number_anon)) 
+Warning messages:
+1: In type.convert.default(X[[i]], ...) :
+  'as.is' should be specified by the caller; using TRUE
+2: In type.convert.default(X[[i]], ...) :
+  'as.is' should be specified by the caller; using TRUE
+3: In type.convert.default(X[[i]], ...) :
+  'as.is' should be specified by the caller; using TRUE
+4: In type.convert.default(X[[i]], ...) :
+  'as.is' should be specified by the caller; using TRUE
+5: In type.convert.default(X[[i]], ...) :
+  'as.is' should be specified by the caller; using TRUE
+6: In type.convert.default(X[[i]], ...) :
+  'as.is' should be specified by the caller; using TRUE
+7: In type.convert.default(X[[i]], ...) :
+  'as.is' should be specified by the caller; using TRUE
+> 
+> # diagnostic
+> 
+> head(jira.publish)
+# A tibble: 2 × 2
+  journal_group          Published
+  <chr>                      <int>
+1 AER and journals             166
+2 Papers and Proceedings       100
+> 
+> 
+> # let's get the noncompliant 
+> if ( file.exists(noncompliance.name) ) {
++   noncompliance <- read_excel(noncompliance.name,
++     sheet = "Noncompliance") 
++ } else {
++   stop(paste0("Missing noncompliance file ",noncompliance.name))
++ }
+> 
+> jira.compliance <- left_join(jira.publish,
++                              noncompliance %>% rename(journal_group=Journal),
++                              by="journal_group") %>%
++                    mutate(Compliant = Published - Incomplete - `Non-compliant`) %>%
++                    select(Journal = journal_group,Compliant,Incomplete,`Non-compliant`)
+> 
+> # store some numbers
+> summary_compliance <- jira.compliance %>% 
++   summarize(Incomplete = sum(Incomplete),
++             `Non-compliant` = sum(`Non-compliant`))
+> all.pubs <- jira.publish %>%
++   summarize(Published = sum(Published))
+> 
+> update_latexnums("mcpubtotal",all.pubs$Published)
+Updating existing field mcpubtotal
+> update_latexnums("mcpubincmplt",summary_compliance$Incomplete)
+Updating existing field mcpubincmplt
+> update_latexnums("mcpubnoncompl",summary_compliance$`Non-compliant`)
+Updating existing field mcpubnoncompl
+> 
+> # create table
+> 
+> stargazer(jira.compliance,style = "aer",
++           summary = FALSE,
++           out = file.path(tables,"n_compliance_manuscript.tex"),
++           out.header = FALSE,
++           float = FALSE,
++           rownames = FALSE
++ )
+
+% Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Wed, Jun 01, 2022 - 02:07:57 PM
+\begin{tabular}{@{\extracolsep{5pt}} cccc} 
+\toprule 
+Journal & Compliant & Incomplete & Non-compliant \\ 
+\midrule AER and journals & 166 & 0 & 0 \\ 
+Papers and Proceedings & 100 & 0 & 0 \\ 
+\bottomrule 
+\end{tabular} 
+> 
+>   
+> 
